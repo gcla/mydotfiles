@@ -1,0 +1,21 @@
+[user]
+        email = gclark@extremenetworks.com
+        name = Graham Clark                                                                                                             
+[alias]
+        sed = ! git grep -z --full-name -l '.' | xargs -0 sed -i -e
+[diff]
+        algorithm = patience
+[alias]
+        rgrep = !git grep
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[color]
+        ui = auto
+[rerere]
+        enabled = 1
+[merge]
+        conflictstyle = diff3
+        renameLimit = 999999
+[alias]
+        save = !sh -c 'export PREV=$(git symbolic-ref HEAD|cut -d/ -f3-) && git checkout -b "$1" && git commit -am "$1" && git checkout "$PREV"' -
+[url "git@github.com:"]
+        insteadOf = https://github.com/
