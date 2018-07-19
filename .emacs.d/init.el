@@ -1,3 +1,101 @@
+;;======================================================================
+
+;; Do this first, so the list pf packages installed is ready
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ac-menu-height 25)
+ '(column-number-mode t)
+ '(company-go-show-annotation t)
+ '(company-minimum-prefix-length 1)
+ '(company-tooltip-limit 25)
+ '(compilation-scroll-output (quote first-error))
+ '(cscope-program "/home/gcla/bin/cscope-noerr")
+ '(cscope-use-relative-paths nil)
+ '(desktop-save-mode t)
+ '(display-time-mode t nil (time))
+ '(eclim-eclipse-dirs (quote ("/home/gcla/eclipse/")))
+ '(eclim-executable "/home/gcla/eclipse/eclim")
+ '(eclimd-default-workspace "~/workspace-gcp")
+ '(ediff-diff-options "-w")
+ '(filesets-data
+   (quote
+    (("boost 1.56"
+      (:tree "/home/gcla/bigdisk/boost_1_56_0" "")))))
+ '(fill-column 150)
+ '(google-translate-default-target-language "en")
+ '(gud-gdb-command-name "/opt/gdb8/bin/gdb -i=mi")
+ '(helm-ack-use-ack-grep t)
+ '(helm-always-two-windows t)
+ '(helm-boring-buffer-regexp-list
+   (quote
+    ("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area" "\\*Minibuf" "\\*")))
+ '(helm-buffer-max-length 40)
+ '(helm-for-files-preferred-list
+   (quote
+    (helm-source-ls-git helm-source-buffers-list helm-source-recentf helm-source-bookmarks helm-source-file-cache helm-source-files-in-current-dir helm-source-locate)))
+ '(helm-git-grep-candidate-number-limit 1000)
+ '(helm-git-grep-max-length-history 1000)
+ '(helm-locate-command "locate %s -e --regex %s")
+ '(helm-never-delay-on-input nil)
+ '(helm-source-projectile-projects-actions
+   (quote
+    (("Open project root in vc-dir or magit `M-g'" . helm-projectile-vc)
+     ("Switch to project" .
+      #[257 "\301\302!)\207"
+	    [projectile-completion-system helm projectile-switch-project-by-name]
+	    3 "
+
+(fn PROJECT)"])
+     ("Open Dired in project's directory `C-d'" . dired)
+     ("Switch to Eshell `M-e'" . helm-projectile-switch-to-eshell)
+     ("Grep in projects `C-s'" . helm-projectile-grep)
+     ("Compile project `M-c'. With C-u, new compile command" . helm-projectile-compile-project)
+     ("Remove project(s) from project list `M-D'" . helm-projectile-remove-known-project))))
+ '(idle-highlight-idle-time 2.0)
+ '(jedi:environment-root "wiresdeepenv3")
+ '(jedi:install-python-jedi-dev-command
+   (quote
+    ("pip" "install" "--index-url=https://pypi.python.org/simple/" "--upgrade" "git+https://github.com/davidhalter/jedi.git@dev#egg=jedi")))
+ '(magit-diff-options nil)
+ '(magit-item-highlight-face nil)
+ '(magit-log-arguments (quote ("--graph" "--decorate" "--follow" "-n256")))
+ '(magit-popup-use-prefix-argument (quote default))
+ '(mo-git-blame-git-blame-args "-w")
+ '(mo-git-blame-use-magit (quote if-available))
+ '(org-agenda-tags-column -100)
+ '(org-drawers (quote ("PROPERTIES" "CLOCK" "HIDEME")))
+ '(org-hide-leading-stars t)
+ '(org-odd-levels-only t)
+ '(org-startup-folded t)
+ '(org-tags-column 100)
+ '(org-todo-keyword-faces (quote (("CANCELLED" . "ForestGreen"))))
+ '(org-todo-keywords
+   (quote
+    ((sequence "TODO" "STARTED" "WAITING" "CANCELLED" "DONE"))))
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(package-selected-packages
+   (quote
+    (jedi pyvenv virtualenv virtualenvwrapper hydra realgud dired-collapse dired-dups json-navigator toml toml-mode highlight-symbol idle-highlight-mode company-quickhelp counsel which-key fuff define-word google-translate company-jedi company-go imenu-anywhere expand-region aggressive-indent ag clang-format xref-js2 company-tern tern jss websocket ace-isearch ace-jump-helm-line ace-jump-mode ace-popup-menu java-snippets helm-commandlinefu helm-company yasnippet-snippets discover discover-js2-refactor js2-highlight-vars js2-refactor js2-mode web-mode web-mode-edit-element multiple-cursors org-projectile projectile popup-imenu ant markdown-mode go-autocomplete go-direx go-dlv gore-mode go-snippets go-rename go-mode go-guru yaml-mode use-package popup lacarte string-inflection ac-emacs-eclim company-emacs-eclim eclim helm-git-files list-processes+ scala-mode thrift ensime icicles emacs-eclim sbt-mode scala-mode2 magit xml-rpc w3 uuidgen tabulated-list protobuf-mode mo-git-blame magit-tramp magit-push-remote magit-popup magit-gitflow magit-find-file magit-filenotify magit-annex json helm-themes helm-swoop helm-spotify helm-spaces helm-sheet helm-rubygems-local helm-recoll helm-rb helm-rails helm-projectile-all helm-projectile helm-project-persist helm-orgcard helm-open-github helm-make helm-ls-hg helm-ls-git helm-helm-commands helm-gtags helm-go-package helm-git-grep helm-git helm-gist helm-flymake helm-emmet helm-dired-recent-dirs helm-descbinds helm-delicious helm-cmd-t helm-c-yasnippet helm-anything helm-ag helm-ack git-commit gccsense f egg dictionary color-theme cmake-mode browse-kill-ring+ auto-complete anything-git anything-config anything-complete all)))
+ '(pgg-default-user-id "gcla@yahoo.com")
+ '(realgud:gdb-command-name "/opt/gdb-7.9.1/bin/gdb")
+ '(safe-local-variable-values
+   (quote
+    ((sh-indent-comment . t)
+     (eval orgstruct-mode)
+     (eval orgstruct++-mode))))
+ '(transient-mark-mode t)
+ '(truncate-lines nil)
+ '(url-proxy-services nil))
+
+;;======================================================================
+
 (require 'package)
 ;;(add-to-list 'package-archives
 ;;             '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -5,32 +103,23 @@
 ;;             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives 
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives 
-	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-;;(add-to-list 'package-archives
-;;	     '("melpa-stable" . "http://stable.melpa.org/packages/")
-;;	     t)
+;;(add-to-list 'package-archives 
+;;	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-;; (use-package ensime
-;;   :ensure t
-;;   :pin melpa-stable)
-
-(defvar gcla/packages
-  '(all anything-complete anything-config anything-git auto-complete popup browse-kill-ring+ browse-kill-ring browse-kill-ring cmake-mode color-theme dictionary link connection egg emacs-eclim s popup dash ensime popup s dash company yasnippet sbt-mode scala-mode f dash s gccsense helm-ack helm helm-core async popup async helm-ag helm helm-core async popup async helm-anything anything helm helm-core async popup async helm-c-yasnippet yasnippet helm helm-core async popup async helm-cmd-t helm-delicious helm-descbinds helm helm-core async popup async helm-dired-recent-dirs helm helm-core async popup async helm-emmet emmet-mode helm helm-core async popup async helm-filesets filesets+ helm helm-core async popup async helm-flymake helm helm-core async popup async helm-gist gist gh marshal ht dash logito pcache dash s helm helm-core async popup async helm-git helm-git-grep helm-core async helm-go-package deferred go-mode helm helm-core async popup async helm-gtags helm helm-core async popup async helm-helm-commands helm helm-core async popup async helm-ls-git helm helm-core async popup async helm-ls-hg helm helm-core async popup async helm-make projectile pkg-info epl helm helm-core async popup async helm-migemo migemo helm-core async helm-open-github gh marshal ht dash logito pcache dash s helm-core async helm-orgcard helm-core async helm-project-persist project-persist helm helm-core async popup async helm-projectile projectile pkg-info epl helm helm-core async popup async helm-projectile-all s dash projectile pkg-info epl helm helm-core async popup async helm-rails inflections helm helm-core async popup async helm-rb helm-ag-r helm helm-core async popup async helm helm-core async popup async helm-recoll helm helm-core async popup async helm-rubygems-local helm helm-core async popup async helm-sheet helm helm-core async popup async helm-spaces spaces helm-core async helm-spotify multi helm helm-core async popup async helm-swoop helm helm-core async popup async helm-themes helm-core async icicles inflections link logito magit-annex magit magit-popup dash async git-commit with-editor dash async dash with-editor dash async dash async magit-filenotify magit magit-popup dash async git-commit with-editor dash async dash with-editor dash async dash async magit-find-file dash magit magit-popup dash async git-commit with-editor dash async dash with-editor dash async dash async magit-gitflow magit-popup dash async magit magit-popup dash async git-commit with-editor dash async dash with-editor dash async dash async magit-push-remote magit magit-popup dash async git-commit with-editor dash async dash with-editor dash async dash async magit-tramp magit magit-popup dash async git-commit with-editor dash async dash with-editor dash async dash async marshal ht dash migemo mo-git-blame multi pcache popup project-persist projectile pkg-info epl protobuf-mode s sbt-mode scala-mode scala-mode2 spaces tabulated-list thrift uuidgen w3 with-editor dash async xml-rpc yasnippet))
-
 (require 'cl-lib)
 
-(defun gcla/install-packages ()
-  "Ensure the packages I use are installed. See `gcla/packages'."
-  (interactive)
-  (let ((missing-packages (cl-remove-if #'package-installed-p gcla/packages)))
-    (when missing-packages
-      (message "Installing %d missing package(s)" (length missing-packages))
-      (package-refresh-contents)
-      (mapc #'package-install missing-packages))))
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(message "Installing missing packages")
+(package-install-selected-packages)
+(message "Done installing missing packages")
+
+;;----------------------------------------------------------------------
+
 
 (defun gcla/ensime-reset ()
   (interactive)
@@ -434,12 +523,12 @@
 
 (require 'bs)
 ;;(require 'magit)
-(load-file "~/emacs/emacs/xcscope.el")
-(load-file "~/.emacs.d/helm-cscope.el")
-(load-file "~/.emacs.d/helm-lacarte.el")
+;(load-file "~/emacs/emacs/xcscope.el")
+;(load-file "~/.emacs.d/helm-cscope.el")
+;(load-file "~/.emacs.d/helm-lacarte.el")
 ;(load-file "~/emacs/emacs/browse-kill-ring.el")
-(load-file "~/emacs/emacs/egg/egg.el")
-(load-file "~/emacs/emacs/egg/egg-grep.el")
+;(load-file "~/emacs/emacs/egg/egg.el")
+;(load-file "~/emacs/emacs/egg/egg-grep.el")
 ;(load-file "~/emacs/emacs/mo-git-blame/mo-git-blame.el")
 
 ;; change magit diff colors
@@ -952,97 +1041,6 @@ Version 2016-12-18"
 
 ;; '(url-proxy-services (quote (("https" . "proxyserver.enterasys.com:80") ("http" . "proxyserver.enterasys.com:80")))))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ac-menu-height 25)
- '(column-number-mode t)
- '(company-go-show-annotation t)
- '(company-minimum-prefix-length 1)
- '(company-tooltip-limit 25)
- '(compilation-scroll-output (quote first-error))
- '(cscope-program "/home/gcla/bin/cscope-noerr")
- '(cscope-use-relative-paths nil)
- '(desktop-save-mode t)
- '(display-time-mode t nil (time))
- '(eclim-eclipse-dirs (quote ("/home/gcla/eclipse/")))
- '(eclim-executable "/home/gcla/eclipse/eclim")
- '(eclimd-default-workspace "~/workspace-gcp")
- '(ediff-diff-options "-w")
- '(filesets-data
-   (quote
-    (("boost 1.56"
-      (:tree "/home/gcla/bigdisk/boost_1_56_0" "")))))
- '(fill-column 150)
- '(google-translate-default-target-language "en")
- '(gud-gdb-command-name "/opt/gdb8/bin/gdb -i=mi")
- '(helm-ack-use-ack-grep t)
- '(helm-always-two-windows t)
- '(helm-boring-buffer-regexp-list
-   (quote
-    ("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area" "\\*Minibuf" "\\*")))
- '(helm-buffer-max-length 40)
- '(helm-for-files-preferred-list
-   (quote
-    (helm-source-ls-git helm-source-buffers-list helm-source-recentf helm-source-bookmarks helm-source-file-cache helm-source-files-in-current-dir helm-source-locate)))
- '(helm-git-grep-candidate-number-limit 1000)
- '(helm-git-grep-max-length-history 1000)
- '(helm-locate-command "locate %s -e --regex %s")
- '(helm-never-delay-on-input nil)
- '(helm-source-projectile-projects-actions
-   (quote
-    (("Open project root in vc-dir or magit `M-g'" . helm-projectile-vc)
-     ("Switch to project" .
-      #[257 "\301\302!)\207"
-	    [projectile-completion-system helm projectile-switch-project-by-name]
-	    3 "
-
-(fn PROJECT)"])
-     ("Open Dired in project's directory `C-d'" . dired)
-     ("Switch to Eshell `M-e'" . helm-projectile-switch-to-eshell)
-     ("Grep in projects `C-s'" . helm-projectile-grep)
-     ("Compile project `M-c'. With C-u, new compile command" . helm-projectile-compile-project)
-     ("Remove project(s) from project list `M-D'" . helm-projectile-remove-known-project))))
- '(idle-highlight-idle-time 2.0)
- '(jedi:environment-root "wiresdeepenv3")
- '(jedi:install-python-jedi-dev-command
-   (quote
-    ("pip" "install" "--index-url=https://pypi.python.org/simple/" "--upgrade" "git+https://github.com/davidhalter/jedi.git@dev#egg=jedi")))
- '(magit-diff-options nil)
- '(magit-item-highlight-face nil)
- '(magit-log-arguments (quote ("--graph" "--decorate" "--follow" "-n256")))
- '(magit-popup-use-prefix-argument (quote default))
- '(mo-git-blame-git-blame-args "-w")
- '(mo-git-blame-use-magit (quote if-available))
- '(org-agenda-tags-column -100)
- '(org-drawers (quote ("PROPERTIES" "CLOCK" "HIDEME")))
- '(org-hide-leading-stars t)
- '(org-odd-levels-only t)
- '(org-startup-folded t)
- '(org-tags-column 100)
- '(org-todo-keyword-faces (quote (("CANCELLED" . "ForestGreen"))))
- '(org-todo-keywords
-   (quote
-    ((sequence "TODO" "STARTED" "WAITING" "CANCELLED" "DONE"))))
- '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.milkbox.net/packages/"))))
- '(package-selected-packages
-   (quote
-    (jedi pyvenv virtualenv virtualenvwrapper hydra realgud dired-collapse dired-dups json-navigator toml toml-mode highlight-symbol idle-highlight-mode company-quickhelp counsel which-key fuff define-word google-translate company-jedi company-go imenu-anywhere expand-region aggressive-indent ag clang-format xref-js2 company-tern tern jss websocket ace-isearch ace-jump-helm-line ace-jump-mode ace-popup-menu java-snippets helm-commandlinefu helm-company yasnippet-snippets discover discover-js2-refactor js2-highlight-vars js2-refactor js2-mode web-mode web-mode-edit-element multiple-cursors org-projectile projectile popup-imenu ant markdown-mode go-autocomplete go-direx go-dlv gore-mode go-snippets go-rename go-mode go-guru yaml-mode use-package popup lacarte string-inflection ac-emacs-eclim company-emacs-eclim eclim helm-git-files list-processes+ scala-mode thrift ensime icicles emacs-eclim sbt-mode scala-mode2 magit xml-rpc w3 uuidgen tabulated-list protobuf-mode mo-git-blame magit-tramp magit-push-remote magit-popup magit-gitflow magit-find-file magit-filenotify magit-annex json helm-themes helm-swoop helm-spotify helm-spaces helm-sheet helm-rubygems-local helm-recoll helm-rb helm-rails helm-projectile-all helm-projectile helm-project-persist helm-orgcard helm-open-github helm-migemo helm-make helm-ls-hg helm-ls-git helm-helm-commands helm-gtags helm-go-package helm-git-grep helm-git helm-gist helm-flymake helm-filesets helm-emmet helm-dired-recent-dirs helm-descbinds helm-delicious helm-cmd-t helm-c-yasnippet helm-anything helm-ag helm-ack git-commit gccsense f egg dictionary color-theme cmake-mode browse-kill-ring+ auto-complete anything-git anything-config anything-complete all)))
- '(pgg-default-user-id "gcla@yahoo.com")
- '(realgud:gdb-command-name "/opt/gdb-7.9.1/bin/gdb")
- '(safe-local-variable-values
-   (quote
-    ((sh-indent-comment . t)
-     (eval orgstruct-mode)
-     (eval orgstruct++-mode))))
- '(transient-mark-mode t)
- '(truncate-lines nil)
- '(url-proxy-services nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
